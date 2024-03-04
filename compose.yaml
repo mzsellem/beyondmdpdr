@@ -11,11 +11,11 @@ services:
   db:
     image: postgres:16-alpine
     ports:
-      - '5432:5432'
+      - '5433:5433'
 
     environment:
       - POSTGRES_PASSWORD=postgres
-      - POSTGRES_USER=marleysellem
+      - POSTGRES_USER=postgres
       - POSTGRES_DB=beyondmdpatientdb
 
     volumes:
@@ -40,7 +40,7 @@ services:
 
     environment:
       - POSTGRES_PASSWORD=postgres
-      - POSTGRES_USER=marleysellem
+      - POSTGRES_USER=postgres
       - POSTGRES_DB=beyondmdpatientdb
 
     ports:

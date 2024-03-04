@@ -18,10 +18,10 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_DB=beyondmdpatientdb
 
-      volumes:
-         - ./data/db:/var/lib/postgresql/data/
+    volumes:
+      - ./data/db:/var/lib/postgresql/data/
 
-   frontend:
+  frontend:
       build:
          context: ./frontend
          dockerfile: Dockerfile
@@ -33,12 +33,12 @@ services:
       depends_on:
          - backend
 
-   backend:
+  backend:
       build:
          context: ./backend
          dockerfile: Dockerfile
 
-    environment:
+      environment:
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_DB=beyondmdpatientdb

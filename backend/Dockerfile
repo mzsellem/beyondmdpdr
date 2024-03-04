@@ -30,4 +30,4 @@ COPY . /app/backend
 # Expose port 8000 to the outside world
 EXPOSE 8000
 
-CMD ["python3", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]

@@ -8,15 +8,15 @@
 # database or a cache. For examples, see the Awesome Compose repository:
 # https://github.com/docker/awesome-compose
 services:
-   db:
-      image: postgres:16-alpine
-      ports:
-         - "5432:5432"
+  db:
+    image: postgres:16-alpine
+    ports:
+      - '5433:5433'
 
-      environment:
-         - POSTGRES_PASSWORD=postgres
-         - POSTGRES_USER=marleysellem
-         - POSTGRES_DB=beyondmdpatientdb
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=beyondmdpatientdb
 
       volumes:
          - ./data/db:/var/lib/postgresql/data/
@@ -38,10 +38,10 @@ services:
          context: ./backend
          dockerfile: Dockerfile
 
-      environment:
-         - POSTGRES_PASSWORD=postgres
-         - POSTGRES_USER=marleysellem
-         - POSTGRES_DB=beyondmdpatientdb
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=beyondmdpatientdb
 
       ports:
          - "8000:8000"

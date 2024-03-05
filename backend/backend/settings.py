@@ -79,7 +79,7 @@ DATABASES = {
         'NAME': 'beyondmdpatientdb',
         'USER': 'marleysellem',
         'PASSWORD': 'postgres',
-        'HOST': 'localhost',
+        'HOST': 'db',
         'PORT': '5432',
     }
 }

@@ -27,6 +27,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the source code into the container.
 COPY . /app/backend
 
+RUN ["python", "manage.py", "migrate"]
+
 # Expose port 8000 to the outside world
 EXPOSE 8000
 
